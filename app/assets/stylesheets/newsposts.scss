@@ -1,0 +1,48 @@
+#news_main {
+    display: flex; /*to align verticall the menu*/
+    padding: 20px 10px 10px 10px;
+}
+
+
+#news_left_main {
+    flex:7; /*use 2/5 of the screen*/
+}
+
+#news_left_right {
+	flex:7;
+  border-left: 1px solid #cccccc;
+}
+
+
+/*index*/
+
+#news_menu{
+	display: flex;
+	align-items: stretch;
+		height: 120px;
+
+}
+
+#news_index_left{
+
+	width: 230px;
+    flex: 0 0 230px;
+    margin-right: 20px;
+    	height: 120px;
+
+}
+
+#news_index_right{
+    align-content: stretch;
+	line-height:24px; /*show only 4 lines*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.article_logo {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position:center;
+    padding: 5px 5px 5px 5px;
+
+}

@@ -1,0 +1,27 @@
+<div>
+	<div class="flexi" style="margin: 20px 0px 0px 0px;">
+		<div class="post_part1">
+			<div class="user_info">
+			<p class="colored_gray"><%= @post.created_at.to_formatted_s(:short) %> </p>
+			<% if comment.user.avatar? %>
+				<div style="background: no-repeat url(<%= comment.user.avatar.url %>) 50% / 100%;position: relative; min-height: 170px; margin: 15px 0px 10px 0px;" class="picture_radius pic_shadow">
+				</div>
+			<% end %>
+			<h3><%= comment.user.username %></h3>
+		</div>
+	</div>
+		<div class="post_part2">
+			<p><%= comment.content.gsub(/\n/, '<br/>').html_safe %></p>
+		</div>
+	</div>
+
+
+	<% if user_signed_in? %>
+		<% if current_user.username == comment.user.username %>
+			<%= link_to "Edit", edit_post_comment_path(comment.post, comment) %> | 
+			<%= link_to "Delete", [comment.post, comment], method: :delete, data: { confirm: "Are you sure?"} %>
+		<% end %>
+	<% end %>
+</div>
+
+		

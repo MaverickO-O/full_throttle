@@ -1,0 +1,49 @@
+<div class="add_padding">
+<h1>Select your gear!</h1> 
+<h2>Filter option</h2>
+
+ <%= select_tag(:brande, options_for_select([['Brand', "brand"],['BMW', "bmw"], ['Ducati', "ducati"],['Honda', "honda"], ['Suzuki', "suzuki"],['Kawasaki', "kawasaki"],['Yamaha', "Yamaha"]]), :onchange => 'filter_function()') %>
+
+<table id="bike_table">
+<thead>
+    <tr>
+      <th>Brand</th>
+      <th>Name</th>
+      <th>Picture</th>
+      <th>Type</th>
+      <th>Cyclinder</th>
+      <th>Horse Power</th>
+      <th>Weight</th>
+      <th>Price</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+ 
+ <tbody>
+  <% @bikes.each do |bike| %>
+    <tr onmouseover="this.style.cursor='pointer'" onClick="window.location.href='<%= bike_path(bike) %>';">
+      <td><%= bike.brand %></td>
+      <td><%= bike.bike_name %></td>
+      <td><img src="/assets/bike/<%= bike.brand.parameterize.underscore %>/<%= bike.bike_name.parameterize.underscore %>/<%= bike.year %>/bike.png" style="width: 120px;"></td>
+      <td><%= bike.bike_type %></td>
+      <td><%= bike.cylinder_cc %> CC</td>
+      <td><%= bike.power_hp %></td>
+      <td><%= bike.weight_lb %></td>
+      <td><%= bike.price_usd %></td>
+      <td><%= bike.year %></td>
+      <!--<td><%= link_to 'Edit', edit_bike_path(bike) %></td>
+      <td><%= link_to 'Destroy', bike_path(bike),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>   -->
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
+
+
+<script src="assets/bike_menu_filter.js"></script>
+
+
+
+

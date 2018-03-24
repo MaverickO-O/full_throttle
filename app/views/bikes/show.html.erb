@@ -1,0 +1,140 @@
+<!-- bike picture -->
+
+<div style="background: no-repeat url(/assets/bike/<%= @bike.brand.parameterize.underscore %>/<%= @bike.bike_name.parameterize.underscore %>/<%= @bike.year %>/big1.jpg) 50% / 100%;position: relative;">
+   <img src="/assets/bike/<%= @bike.brand.parameterize.underscore %>/<%= @bike.bike_name.parameterize.underscore %>/<%= @bike.year %>/big1.jpg" style="height:100%; width: 100%; object-fit: contain;visibility: hidden;vertical-align: top;" />
+   
+   <div class="picturetobackground">
+     <div id="nothing_left">
+     </div>
+     <div id="menu_right">
+      <div id="inside_menu">  
+       <div class="name_bar_logo">
+         <%= image_tag("/assets/logo/#{ @bike.brand.downcase }.png", style:'height: 100px;') %>
+       </div>
+       <div id="name_bar_title" class="name_bar_logo">
+         <p><h2><%= @bike.bike_name %></h2></p>
+       </div>
+       <div>
+         <li>Type > <%= @bike.bike_type %></li>
+         <li>Cylindricity > <%= @bike.cylinder_cc %> CC</li>
+         <li>Power > <%= @bike.power_hp %> HP</li>
+         <li>Weight > <%= @bike.weight_kg %>kg</li>
+         <li>Price > $<%= @bike.price_usd %></li>
+       </div> 
+       <div class="name_bar_logo">
+         <img src="/assets/bike/<%= @bike.brand.parameterize.underscore %>/<%= @bike.bike_name.parameterize.underscore %>/<%= @bike.year %>/bike.png" style="width: 350px;">
+       </div>
+      </div>
+     </div>
+   </div>
+</div>
+
+
+
+<!--INTRODUCTION -->
+  <div id="style" class="flexi">
+    <div class="title_left">
+      <div class="title_left_up">       
+          <h2>Introduction</h2>
+      </div>    
+    </div>
+    <div class="text_right">
+      <h3><%= @bike.intro.split("\n").first%></h3>
+      <p><%= @bike.intro.gsub(@bike.intro.split("\n").first + "\n",'').gsub(/\n/, '<br/>').html_safe %></p>            
+      </div>
+  </div>
+
+  <!-- bike picture -->
+<div id="bike_background">
+<img src="/assets/bike/<%= @bike.brand.parameterize.underscore %>/<%= @bike.bike_name.parameterize.underscore %>/<%= @bike.year %>/big2.jpg" style='height:100%; width: 100%; object-fit: contain' />
+</div>
+
+  <!--design and STYLE-->
+  <div id="style" class="flexi">
+    <div class="title_left">   
+        <div class="title_left_up">      
+          <h2>Design & built quality</h2>
+        </div>
+        <div class="title_left_down" style="background: no-repeat url(/assets/logo/<%= @bike.style_mark %>pistons.png) 50% / 50%;background-position: center top;">    
+        </div>     
+    </div>
+    <div class="text_right">
+      <h3><%= @bike.style.split("\n").first%></h3>
+      <p><%= @bike.style.gsub(@bike.style.split("\n").first + "\n",'').gsub(/\n/, '<br/>').html_safe %></p> 
+    </div>
+  </div>
+
+  <!--Engine & transmission-->
+  <div id="style" class="flexi">
+    <div class="title_left"> 
+        <div class="title_left_up">      
+          <h2>Engine & Transmission</h2>
+        </div>
+        <div class="title_left_down" style="background: no-repeat url(/assets/logo/<%= @bike.engine_mark %>pistons.png) 50% / 50%;background-position: center top;">    
+        </div>  
+    </div>
+    <div class="text_right">
+      <h3><%= @bike.engine.split("\n").first%></h3>
+      <p><%= @bike.engine.gsub(@bike.engine.split("\n").first + "\n",'').gsub(/\n/, '<br/>').html_safe %></p>
+    </div>
+  </div>
+
+<!--Handling & Braking -->
+  <div id="style" class="flexi">
+    <div class="title_left"> 
+        <div class="title_left_up">      
+          <h2>Handling & braking</h2>
+        </div>
+        <div class="title_left_down" style="background: no-repeat url(/assets/logo/<%= @bike.handling_mark %>pistons.png) 50% / 50%;background-position: center top;">    
+        </div>  
+    </div>
+    <div class="text_right">
+      <h3><%= @bike.handling.split("\n").first%></h3>
+      <p><%= @bike.handling.gsub(@bike.handling.split("\n").first + "\n",'').gsub(/\n/, '<br/>').html_safe %></p>
+    </div>
+  </div>
+
+<!--Comfort -->
+  <div id="style" class="flexi">
+    <div class="title_left"> 
+        <div class="title_left_up">      
+          <h2>Comfort</h2>
+        </div>
+        <div class="title_left_down" style="background: no-repeat url(/assets/logo/<%= @bike.comfort_mark %>pistons.png) 50% / 50%;background-position: center top;">    
+        </div>  
+    </div>
+    <div class="text_right">
+      <h3><%= @bike.comfort.split("\n").first%></h3>
+      <p><%= @bike.comfort.gsub(@bike.comfort.split("\n").first + "\n",'').gsub(/\n/, '<br/>').html_safe %></p>
+    </div>
+  </div>
+
+  <!--Value -->
+  <div id="style" class="flexi">
+    <div class="title_left"> 
+        <div class="title_left_up">      
+          <h2>Value</h2>
+        </div>
+        <div class="title_left_down" style="background: no-repeat url(/assets/logo/<%= @bike.value_mark %>pistons.png) 50% / 50%;background-position: center top;">    
+        </div>  
+    </div>
+    <div class="text_right">
+      <h3><%= @bike.value.split("\n").first%></h3>
+      <p><%= @bike.value.gsub(@bike.value.split("\n").first + "\n",'').gsub(/\n/, '<br/>').html_safe %></p>
+    </div>
+  </div>
+
+  <!--CONCLUSION -->
+  <div id="style" class="flexi">
+    <div class="title_left">
+    <div class="title_left_up">       
+        <h2>Conclusion</h2>
+    </div>    
+    </div>
+    <div class="text_right">
+      <h3><%= @bike.conclusion.split("\n").first%></h3>
+      <p><%= @bike.conclusion.gsub(@bike.conclusion.split("\n").first + "\n",'').gsub(/\n/, '<br/>').html_safe %></p>  
+    </div>
+  </div>
+
+

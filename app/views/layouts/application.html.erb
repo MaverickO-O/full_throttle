@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Full Throttle</title>
+    <%= csrf_meta_tags %>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"> <!-- google font -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+
+
+  <body>
+
+  <!-- Trigger/Open The Modal -->
+<div id="openModal" class="modalDialog">
+  <div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Login</h2>
+        <%= form_for(:user, :url => session_path(:user)) do |f| %>
+           <div class="email-container">
+             <%= f.text_field :email, autofocus: true, :class =>"form-control",placeholder: "Email", value:"" %>
+           </div>
+           <div class="password-container">
+             <%= f.password_field :password,:label =>"Password", :class =>"form-control", placeholder:"Password", value:""%>
+           </div>
+           <%= f.submit 'Login', :class =>"form-control" %>
+           <%= f.check_box :remember_me, label: "Remember me", value: "true" %>
+           <%= f.label :remember_me %>
+         <% end %>
+
+  </div>
+</div>
+
+
+  
+<!-- title bar with the menu -->
+<nav>
+  <div class="nav-center">
+    <ul>
+      <li class="dropdown" style="float:right">
+	      <% if user_signed_in? %>
+	        <%= link_to current_user.username, edit_user_registration_path, :class => "dropbtn" %>
+	      <% else %>
+          <a href="#openModal">Login / Register</a>
+	      <% end %>
+        <div class="dropdown-content dropdown-content-right">
+           <% if user_signed_in? %>
+            <%= link_to('Logout', destroy_user_session_path) %>         
+           <% else %>
+            <a href="#openModal">Login</a>
+          <% end %>
+          <% if user_signed_in? %>
+            <%= link_to('Edit account', edit_user_registration_path) %>
+          <% else %>
+            <%= link_to('Register', new_user_registration_path)  %>
+          <% end %>
+        </div>
+      </li> 
+      <% if user_signed_in? %>
+        <li style="float:right"><div style="background-image: url(<%= current_user.avatar.url %>)" class="bar_logo"></div></li></li>
+      <% end %>
+
+      <li><div style="background-image: url(/assets/logo/logo.png)" class="bar_logo"></div></li>
+      <li><%= link_to 'News', newsposts_path, :class => "dropbtn"%></li>
+      <!-- <li><a href="news.html"> Safety </a></li> -->
+      <li class="dropdown">
+        <%= link_to 'Bikes', bikes_path, :class => "dropbtn"%>
+        <div class="dropdown-content">
+         <div class="columni">
+          <a href="#"><%= BrandBikeDb.find(2).brand_name %></a>
+          <a href="#"><%= BrandBikeDb.find(3).brand_name %></a>
+          <a href="#"><%= BrandBikeDb.find(4).brand_name %></a>
+          <a href="#"><%= BrandBikeDb.find(5).brand_name %></a>
+          <a href="#"><%= BrandBikeDb.find(6).brand_name %></a>
+          <a href="#"><%= BrandBikeDb.find(7).brand_name %></a>
+          <a href="#"><%= BrandBikeDb.find(8).brand_name %></a>
+        </div>
+        <div class="columni">
+          <a href="#">Cruiser</a>
+          <a href="#">Roadster</a>
+          <a href="#">Sportbike</a>
+          <a href="#">Touring</a>
+        </div>
+        </div>
+      </li>
+      <!-- <li><a href="clothing.html">Accessory</a></li> -->
+      <li><a href="learning.html">Learning</a></li>
+      <li><a href="touring.html">Touring</a></li>
+      <li><%= link_to('Forum', posts_path) %></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!--<p class="notice"><%= notice %></p> -->
+<p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+
+  <footer>
+  	<p>Full throttle 2017  |  all right reserved</p>
+  </footer>
+</html>

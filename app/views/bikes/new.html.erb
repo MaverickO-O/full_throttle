@@ -1,0 +1,116 @@
+<h1>Define new bike</h1>
+
+
+<%= form_for :bike, url: bikes_path do |f| %>
+  <p>
+    <%= f.label :bike_name %><br>
+    <%= f.text_field :bike_name %>
+  </p>
+
+  <p>
+    <%= f.label :brand %><br>
+    <%= f.select :brand, [['BMW', "BMW"],['Ducati', "Ducati"],['Harley-Davidson', "Harley-Davidson"], ['Honda', "Honda"], ['Suzuki', "Suzuki"],['Kawasaki', "Kawasaki"],['Yamaha', "Yamaha"]]%>
+  </p>
+ 
+  <p>
+    <%= f.label :bike_type %><br>
+    <%= f.select :bike_type, [['Cruiser', "Cruiser"],['Roadster', "Roadster"],['Sportbike', "Sportbike"], ['Touring', "Touring"]]%>
+  </p>
+
+  <p>
+    <%= f.label :year %><br>
+    <%= f.text_field :year %>
+  </p>
+
+  <p>
+    <%= f.label :cylinder_cc %><br>
+    <%= f.text_field :cylinder_cc %>
+  </p>
+
+  <p>
+    <%= f.label :power_hp %><br>
+    <%= f.text_field :power_hp %>
+  </p>
+
+  <p>
+    <%= f.label :weight_kg %><br>
+    <%= f.text_field :weight_kg %>
+  </p>
+
+  <p>
+    <%= f.label :weight_lb %><br>
+    <%= f.text_field :weight_lb %>
+  </p>
+   <p>
+    <%= f.label :price_usd %><br>
+    <%= f.text_field :price_usd %>
+  </p>
+
+  <p>
+    <%= f.label :intro %><br>
+    <%= f.text_area :intro %>
+  </p>
+
+  <p>
+    <%= f.label :style %><br>
+    <%= f.text_area :style %>
+  </p>
+
+  <p>
+    <%= f.label :style_mark %><br>
+    <%= f.text_field :style_mark %>
+  </p>
+
+  <p>
+    <%= f.label :engine %><br>
+    <%= f.text_area :engine %>
+  </p>
+
+  <p>
+    <%= f.label :engine_mark %><br>
+    <%= f.text_field :engine_mark %>
+  </p>
+
+  <p>
+    <%= f.label :handling %><br>
+    <%= f.text_area :handling %>
+  </p>
+
+  <p>
+    <%= f.label :handling_mark %><br>
+    <%= f.text_field :handling_mark %>
+  </p>
+
+  <p>
+    <%= f.label :comfort %><br>
+    <%= f.text_area :comfort %>
+  </p>
+
+  <p>
+    <%= f.label :comfort_mark %><br>
+    <%= f.text_field :comfort_mark %>
+  </p>
+
+    <p>
+    <%= f.label :value %><br>
+    <%= f.text_area :value %>
+  </p>
+
+  <p>
+    <%= f.label :value_mark %><br>
+    <%= f.text_field :value_mark %>
+  </p>
+
+  <p>
+    <%= f.label :conclusion %><br>
+    <%= f.text_area :conclusion %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+  
+<% end %>
+
+<a><%= link_to 'Back', bikes_path %></a>

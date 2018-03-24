@@ -1,0 +1,18 @@
+<div class="add_padding">
+	<h2>News</h2>
+	<ul>
+		<% @newsposts.each do |newspost| %>
+		<li class="forum_box" onmouseover="this.style.cursor='pointer'" onClick="window.location.href='<%= newspost_path(newspost) %>';">
+			<div id="news_menu">
+				<div id="news_index_left" style="background-image: url(<%= newspost.picture.url %>)" class="article_logo">
+				</div>
+				<div id="news_index_right">
+					<p class="colored_gray" style="float:right"><%= time_ago_in_words(newspost.created_at) %> ago by  <%= newspost.user.username %> </p> 
+					<h3 class="colored_blue"><%= newspost.title %></h3>
+					<p style="padding-left: 10px" class="post_extract"><%= newspost.text %></p>
+				</div>
+			</div>
+		</li>	
+		<% end %>
+	</ul>
+</div>

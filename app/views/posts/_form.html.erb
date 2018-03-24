@@ -1,0 +1,16 @@
+
+<%= simple_form_for (@post), html: { multipart: true} do |f| %>
+	<p>Category</p>
+	<%= f.collection_select(:categ, Forumcateg.all, :id, :titl) %><br>
+	<p>Title of the post:</p>
+    <%= f.text_field :title %><br>
+    <p>Post content :</p>
+    <%= f.text_area :content %><br>
+	<p>Input a picture :</p>
+	<%= f.file_field :image %><br>
+	<p>Input a picture description :</p>
+	<%= f.text_field :imagedesc %><br>
+	<p>
+    	<%= f.submit %>
+  	</p>
+<% end %>

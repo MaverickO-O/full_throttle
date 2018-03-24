@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+	<% if current_user.username == @comment.user.username %>
+		<h1> Edit Reply </h1>
+		<%= simple_form_for [@post, @comment] do |f| %>
+			<%= f.input :content %>
+			<%= f.submit %>
+		<% end %>
+	<% else %>
+		<p> error </p>
+	<% end %>
+<% else %>
+	<p> error </p>
+<% end %>

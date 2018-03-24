@@ -1,0 +1,25 @@
+<div class="add_padding">
+	<p class="colored_gray" style="float:right"><%= time_ago_in_words(@newspost.created_at) %> ago</p>
+	<h1><%= @newspost.title %></h1>
+
+	<div id="news_main">
+		<% if user_signed_in? %>
+			<% if current_user.username == @newspost.user.username %>
+				<%= link_to "Edit Post", edit_newspost_path(@newspost) %> | 
+				<%= link_to "Delete Post", newspost_path(@newspost), method: :delete, data: { confirm: "Are you sure ?"} %>
+				<br>
+			<% end %>
+		<% end %>
+
+		<div id="news_left_main" class="add_padding">
+			<p><%= @newspost.text.gsub(/\n/, '<br/>').html_safe %></p>
+		</div>
+
+		<div id="news_left_right">
+			<div class="post_part2">
+				<%= image_tag @newspost.picture, :class=>"image_forum_right pic_shadow" if @newspost.picture? %>
+			</div>
+		</div>
+	</div>
+	
+</div>
