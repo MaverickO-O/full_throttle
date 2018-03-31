@@ -61,7 +61,7 @@ end
 
 group :production do
   # Use sqlite3 as the database for Active Record
-  gem 'pg'
+  gem 'pg', '~> 0.20'
   gem 'rails_12factor'
 end
 
