@@ -24,7 +24,7 @@
 					<% end %>
 				</div>
 			</div>
-			<div class="post_part2">
+			<div class="post_part2 image_forum_right">
 				<%= image_tag @post.image.url, :class=>"image_forum_right pic_shadow" if @post.image? %>
 				<p><%= @post.content.gsub(/\n/, '<br/>').html_safe %></p>
 			</div>
