@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171111043444) do
+ActiveRecord::Schema.define(version: 20180602053709) do
 
   create_table "bikes", force: :cascade do |t|
     t.string "bike_name"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20171111043444) do
     t.text "comfort"
     t.integer "value_mark"
     t.text "value"
+    t.string "pictureintro"
+    t.string "picturebike"
   end
 
   create_table "brand_bike_dbs", force: :cascade do |t|
