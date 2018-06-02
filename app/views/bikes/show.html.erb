@@ -1,7 +1,8 @@
 <!-- bike picture -->
 
-<div style="background: no-repeat url(/assets/bike/<%= @bike.brand.parameterize.underscore %>/<%= @bike.bike_name.parameterize.underscore %>/<%= @bike.year %>/big1.jpg) 50% / 100%;position: relative;">
-   <img src="/assets/bike/<%= @bike.brand.parameterize.underscore %>/<%= @bike.bike_name.parameterize.underscore %>/<%= @bike.year %>/big1.jpg" style="height:100%; width: 100%; object-fit: contain;visibility: hidden;vertical-align: top;" />
+
+<div style="background: no-repeat url(<%= @bike.pictureintro %>) 50% / 100%;position: relative;">
+   <img src="<%= @bike.pictureintro %>" style="height:100%; width: 100%; object-fit: contain;visibility: hidden;vertical-align: top;" />
    
    <div class="picturetobackground">
      <div id="nothing_left">
@@ -22,7 +23,7 @@
          <li>Price > $<%= @bike.price_usd %></li>
        </div> 
        <div class="name_bar_logo">
-         <img src="/assets/bike/<%= @bike.brand.parameterize.underscore %>/<%= @bike.bike_name.parameterize.underscore %>/<%= @bike.year %>/bike.png" style="width: 350px;">
+         <img src="<%= @bike.picturebike %>" style="width: 350px;">
        </div>
       </div>
      </div>
@@ -46,7 +47,8 @@
 
   <!-- bike picture -->
 <div id="bike_background">
-<img src="/assets/bike/<%= @bike.brand.parameterize.underscore %>/<%= @bike.bike_name.parameterize.underscore %>/<%= @bike.year %>/big2.jpg" style='height:100%; width: 100%; object-fit: contain' />
+<%= image_tag @bike.pictureintro, :style=>"height:100%; width: 100%; object-fit: contain" if @bike.pictureintro? %>
+<!--<img src="/assets/bike/<%= @bike.brand.parameterize.underscore %>/<%= @bike.bike_name.parameterize.underscore %>/<%= @bike.year %>/big2.jpg" style='height:100%; width: 100%; object-fit: contain' /> -->
 </div>
 
   <!--design and STYLE-->

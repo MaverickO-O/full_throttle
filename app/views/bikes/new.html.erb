@@ -17,6 +17,12 @@
     <%= f.select :bike_type, [['Cruiser', "Cruiser"],['Roadster', "Roadster"],['Sportbike', "Sportbike"], ['Touring', "Touring"]]%>
   </p>
 
+  <p>Input a picture that will be used for the intro :</p>
+  <%= f.file_field :pictureintro %><br>
+
+  <p>Input a the picture of the bike in png with transparency :</p>
+  <%= f.file_field :picturebike %><br>
+
   <p>
     <%= f.label :year %><br>
     <%= f.text_field :year %>
