@@ -26,7 +26,7 @@ class BikesController < ApplicationController
     @bike = Bike.find(params[:id])
  
     @bike.update(bike_params)
-    FeedbackMailer.feedback(@bike).deliver
+    #FeedbackMailer.feedback(@bike).deliver
     redirect_to @bike
   end
 
