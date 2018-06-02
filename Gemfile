@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'carrierwave', '~> 1.0'
+gem 'fog-aws'
 gem 'mini_magick'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
 gem 'erubis' #for devise
