@@ -4,7 +4,8 @@
   <%= @bike.bike_name.squish.downcase.tr(" ","") %>
 
 </p>
-<%= form_for @bike, :html => { :multipart => true} do |f| %> <!--use multipart when upload file -->
+<%= simple_form_for (@bike), html: { multipart: true} do |f| %>
+ <!--use multipart when upload file -->
   <p>
     <%= f.submit %>
   </p>
