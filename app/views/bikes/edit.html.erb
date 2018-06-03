@@ -2,10 +2,8 @@
 <p>
   <strong>Name:</strong>
   <%= @bike.bike_name.squish.downcase.tr(" ","") %>
-
 </p>
-<%= simple_form_for (@bike), html: { multipart: true} do |f| %>
- <!--use multipart when upload file -->
+<%= form_for @bike do |f| %>
   <p>
     <%= f.submit %>
   </p>
