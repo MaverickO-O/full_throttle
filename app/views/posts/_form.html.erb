@@ -1,5 +1,5 @@
 
-<%= simple_form_for (@post), html: { multipart: true} do |f| %>
+<%= simple_form_for (@post), html: { multipart: true} do |f| %> <!--use multipart when upload file -->
 	<p>Category</p>
 	<%= f.collection_select(:categ, Forumcateg.all, :id, :titl) %><br>
 	<p>Title of the post:</p>

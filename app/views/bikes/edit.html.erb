@@ -2,9 +2,9 @@
 <p>
   <strong>Name:</strong>
   <%= @bike.bike_name.squish.downcase.tr(" ","") %>
-  /assets/bike/<%= @bike.brand.parameterize.underscore %>/<%= @bike.bike_name.parameterize.underscore %>/<%= @bike.year %>/big2.jpg 
+
 </p>
-<%= form_for(@bike) do |f| %>
+<%= form_for(@bike), html: { multipart: true} do |f| %> <!--use multipart when upload file -->
   <p>
     <%= f.submit %>
   </p>
