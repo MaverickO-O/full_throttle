@@ -18,16 +18,22 @@ class BikesController < ApplicationController
   def create
     @bike = Bike.new(bike_params)
  
-    @bike.save
-    redirect_to @bike
+    if @bike.save
+      redirect_to @bike
+    else
+       render 'new'
+    end
   end
 
   def update
     @bike = Bike.find(params[:id])
  
-    @bike.update(bike_params)
-    #FeedbackMailer.feedback(@bike).deliver
-    redirect_to @bike
+    if @bike.update(bike_params)
+      #FeedbackMailer.feedback(@bike).deliver
+      redirect_to @bike
+    else
+      render 'edit'
+    end
   end
 
   def destroy

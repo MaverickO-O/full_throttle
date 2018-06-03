@@ -43,7 +43,6 @@ class PostsController < ApplicationController
 
 
 	private
-
 	def find_post
 			@post = Post.find(params[:id])
 	end
