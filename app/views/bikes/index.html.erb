@@ -31,10 +31,17 @@
       <td><%= bike.weight_lb %></td>
       <td><%= bike.price_usd %></td>
       <td><%= bike.year %></td>
-      <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
-      <td><%= link_to 'Destroy', bike_path(bike),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>   
+
+      <% if user_signed_in? %>
+        <% if current_user.role=="full_admin" %>
+
+          <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
+          <td><%= link_to 'Destroy', bike_path(bike),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %></td>   
+        <% end %>
+      <% end %>
+
     </tr>
   <% end %>
   </tbody>
