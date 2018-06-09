@@ -7,7 +7,7 @@
 				<div id="news_index_left" style="background-image: url(<%= newspost.picture.url %>)" class="article_logo">
 				</div>
 				<div id="news_index_right">
-					<p class="colored_gray" style="float:right"><%= time_ago_in_words(newspost.created_at) %> ago by  <%= newspost.user.username %> </p> 
+					<p class="colored_gray" style="float:right"><%= time_ago_in_words(newspost.created_at) %> ago </p> <!--by  <%= newspost.user.username %> </p> -->
 					<h3 class="colored_blue"><%= newspost.title %></h3>
 					<p style="padding-left: 10px" class="post_extract"><%= newspost.text %></p>
 				</div>
