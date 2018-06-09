@@ -1,15 +1,11 @@
-<% if user_signed_in? %>
-  <% if current_user.role=="full_admin" %>
 
-	<%= simple_form_for (@newspost), html: { multipart: true} do |f| %>
-		<p>
-			<%= f.input :title %>
-			<%= f.input :text %>
-			<%= f.file_field :picture %>
-		</p>
-		<p>
-	    	<%= f.submit %>
-	  	</p>
-	<% end %>
-  <% end %>
+<%= simple_form_for (@newspost), html: { multipart: true} do |f| %>
+	<p>
+		<%= f.input :title %>
+		<%= f.input :text %>
+		<%= f.file_field :picture %>
+	</p>
+	<p>
+    	<%= f.submit %>
+  	</p>
 <% end %>
