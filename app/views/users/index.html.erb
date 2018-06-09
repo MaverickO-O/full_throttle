@@ -1,0 +1,38 @@
+<% if user_signed_in? %>
+<% if current_user.role=="full_admin" %>
+
+
+<table id="bike_table">
+<thead>
+    <tr>
+      <th>username</th>
+      <th>email</th>
+      <th>role</th>
+      <th>Type</th>
+      <th>Cyclinder</th>
+      <th>Horse Power</th>
+      <th>Weight</th>
+      <th>Price</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+ 
+ <tbody>
+  <% @users = User.all %>
+	<% @users.each do |user| %>
+	 <td><%= user.username %></td>
+	 <td><%= user.email %></td>
+	 <td><%= user.role %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+	
+	  
+	
+<% end %>
+<% else %>
+
+
+<% end %>
