@@ -9,6 +9,12 @@
 	<p>Input a picture :</p>
 	<%= f.file_field :image %><br>
 	<p>Input a picture description :</p>
+	<p>
+    <label>
+      <%= f.check_box :remove_image %>
+      Remove image
+    </label>
+  	</p>
 	<%= f.text_field :imagedesc %><br>
 	<p>
     	<%= f.submit %>
