@@ -25,10 +25,11 @@
 				</div>
 			</div>
 			<div class="post_part2 image_forum_right">
-				<%= image_tag @post.image.url, :class=>"image_forum_right pic_shadow" if @post.image? %>
+				<%= image_tag @post.image, :class=>"image_forum_right pic_shadow" if @post.image.attachment.present? %>
 				<p><%= @post.content.gsub(/\n/, '<br/>').html_safe %></p>
 			</div>
 		</div>
+
 
 
 	<!-- comments -->
@@ -42,3 +43,4 @@
 			<%= link_to "Sign up to comment", new_user_registration_path %>
 		<% end %>
 </div>
+

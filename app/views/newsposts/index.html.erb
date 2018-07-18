@@ -4,7 +4,8 @@
 		<% @newsposts.each do |newspost| %>
 		<li class="forum_box" onmouseover="this.style.cursor='pointer'" onClick="window.location.href='<%= newspost_path(newspost) %>';">
 			<div id="news_menu">
-				<div id="news_index_left" style="background-image: url(<%= newspost.picture.url %>)" class="article_logo">
+				<div id="news_index_left" class="article_logo">
+					<%= image_tag newspost.thumbnail if newspost.image.attachment.present? %>
 				</div>
 				<div id="news_index_right">
 					<p class="colored_gray" style="float:right"><%= time_ago_in_words(newspost.created_at) %> ago </p> <!--by  <%= newspost.user.username %> </p> -->

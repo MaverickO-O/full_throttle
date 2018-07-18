@@ -1,6 +1,11 @@
 class Bike < ApplicationRecord
 	has_one :brand_bike_dbs
-	#belongs_to :user
-	mount_uploader :pictureintro, ImageUploader
-	mount_uploader :picturebike, ImageUploader
+
+	has_one_attached :picturetop
+	has_one_attached :picturebike
+
+
+	def bikethumbnail
+		return self.picturebike.variant(resize: '120x120').processed
+	end
 end

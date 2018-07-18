@@ -17,9 +17,11 @@
 
 		<div id="news_left_right">
 			<div class="post_part2">
-				<%= image_tag @newspost.picture, :class=>"image_forum_right pic_shadow" if @newspost.picture? %>
+				
+				<%= image_tag @newspost.image, :class=>"image_forum_right pic_shadow" if @newspost.image.attachment.present? %>
 			</div>
 		</div>
 	</div>
 	
 </div>
+

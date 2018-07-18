@@ -20,8 +20,9 @@
 							<p class="colored_gray" style="float:right"><%= time_ago_in_words(post.created_at) %> ago by  <%= post.user.username %> </p> 
 							<p class="colored_dark_gray"><%= Forumcateg.find(post.categ).titl %></p>
 							<div id="forum_post_list">
-								<% if post.image? %>
-									<div id="forum_post_left" style="background-image: url(<%= post.image.url %>)" class="forum_small_pic">
+								<% if post.image.attachment.present? %>
+									<div class="forum_small_pic">
+										<%= image_tag post.thumbnail  %>
 									</div>
 								<% end %>
 								<div id="forum_post_right">

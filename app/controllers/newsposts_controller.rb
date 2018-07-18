@@ -49,6 +49,6 @@ class NewspostsController < ApplicationController
 	end
 
 	def newspost_params
-		params.require(:newspost).permit(:title, :text, :picture, :author, :viewcount)
+		params.require(:newspost).permit(:title, :text, :picture, :author, :viewcount, :image)
 	end
 end
