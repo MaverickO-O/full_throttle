@@ -25,6 +25,7 @@ Rails.application.configure do
 
 # Store files on Amazon S3.
 config.active_storage.service = :amazon
+config.require_master_key = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
