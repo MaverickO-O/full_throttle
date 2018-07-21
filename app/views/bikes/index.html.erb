@@ -24,7 +24,7 @@
     <tr onmouseover="this.style.cursor='pointer'" onClick="window.location.href='<%= bike_path(bike) %>';">
       <td><%= bike.brand %></td>
       <td><%= bike.bike_name %></td>
-      <td><%= image_tag bike.bikethumbnail if bike.picturebike.attachment.present? %></td>
+      <td><%= image_tag(bike.picturebike, width: '120') if bike.picturebike.attachment.present? %></td>
       <td><%= bike.bike_type %></td>
       <td><%= bike.cylinder_cc %> CC</td>
       <td><%= bike.power_hp %></td>

@@ -69,9 +69,9 @@
         </div>
       </li> 
       <% if user_signed_in? %>
-        <li style="float:right"><div style="background-image: url(<%= current_user.avatar.url %>)" class="bar_logo"></div></li></li>
+        <li style="float:right"><div style="background-image: url(<%= rails_blob_url(current_user.avatar) if current_user.avatar.attachment.present? %>)" class="bar_logo"></div></li>
       <% end %>
-
+    
       <li><div style="background-image: url(/assets/logo/logo.png)" class="bar_logo"></div></li>
       <li><%= link_to 'News', newsposts_path, :class => "dropbtn"%></li>
       <!-- <li><a href="news.html"> Safety </a></li> -->
