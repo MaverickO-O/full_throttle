@@ -12,6 +12,11 @@
 
 	<div id="forum_left_right">
 		<div class="add_padding">
+			<% if user_signed_in? %>
+				<%= link_to "New Post", new_post_path %>
+			<% else %>
+				<%= link_to "Sign up to post", new_user_registration_path %>
+			<% end %>
 			<h2>Latest posts</h2>	
 			<ul>
 				<% @posts.each do |post| %>
@@ -33,11 +38,6 @@
 						</li>					
 				<% end %>
 			</ul>
-			<% if user_signed_in? %>
-				<%= link_to "New Post", new_post_path %>
-			<% else %>
-				<%= link_to "Sign up to post", new_user_registration_path %>
-			<% end %>
 		</div>
 	</div>
 
