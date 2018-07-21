@@ -7,7 +7,7 @@ class Post < ApplicationRecord
 
 
 	def thumbnail
-		return self.image.variant(resize: '200x200').processed
+		return self.image.variant(resize: '400x400').processed
 	end
 
 end
