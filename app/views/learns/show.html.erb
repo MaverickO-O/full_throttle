@@ -1,12 +1,16 @@
-<% if user_signed_in? %>
-  <% if current_user.role=="full_admin" %>
-    <p id="notice"><%= notice %></p>
-    <%= link_to 'Edit', edit_learn_path(@learn) %> |
-    <%= link_to 'Back', learns_path %>
-  <% end %>
-<% end %> 
+<div id="learnbackground">
 
-<p>
-  <strong>Text:</strong>
-  <%= @learn.text %>
-</p>
+	<% if user_signed_in? %>
+	  <% if current_user.role=="full_admin" %>
+	    <p id="notice"><%= notice %></p>
+	    <%= link_to 'Edit', edit_learn_path(@learn) %> |
+	    <%= link_to 'Back', learns_path %>
+	  <% end %>
+	<% end %> 
+
+	<h1><%= @learn.learntitle %></h1>
+	<p>
+	  <%= @learn.text %>
+	</p>
+
+</div>

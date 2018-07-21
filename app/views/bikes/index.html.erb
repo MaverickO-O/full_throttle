@@ -15,7 +15,6 @@
       <th>Horse Power</th>
       <th>Weight</th>
       <th>Price</th>
-      <th>Year</th>
     </tr>
   </thead>
  
@@ -30,7 +29,6 @@
       <td><%= bike.power_hp %></td>
       <td><%= bike.weight_lb %></td>
       <td><%= bike.price_usd %></td>
-      <td><%= bike.year %></td>
 
       <% if user_signed_in? %>
         <% if current_user.role=="full_admin" %>
