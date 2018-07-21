@@ -22,7 +22,7 @@
 							<div id="forum_post_list">
 								<% if post.image.attachment.present? %>
 									<div class="forum_small_pic">
-										<%= image_tag post.thumbnail  %>
+										<%= image_tag post.thumbnail , width: '200' %>
 									</div>
 								<% end %>
 								<div id="forum_post_right">
