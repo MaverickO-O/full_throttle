@@ -1,16 +1,15 @@
-<div id="learnbackground">
+<div class="add_padding_top_bottom">
+	<div id="learnbackground">
 
-	<% if user_signed_in? %>
-	  <% if current_user.role=="full_admin" %>
-	    <p id="notice"><%= notice %></p>
-	    <%= link_to 'Edit', edit_learn_path(@learn) %> |
-	    <%= link_to 'Back', learns_path %>
-	  <% end %>
-	<% end %> 
+		<% if user_signed_in? %>
+		  <% if current_user.role=="full_admin" %>
+		    <p id="notice"><%= notice %></p>
+		    <%= link_to 'Edit', edit_learn_path(@learn) %> |
+		    <%= link_to 'Back', learns_path %>
+		  <% end %>
+		<% end %> 
 
-	<h1><%= @learn.learntitle %></h1>
-	<p>
-	  <%= @learn.text %>
-	</p>
-
+		<h1><%= @learn.learntitle %></h1>
+		<p><%= @learn.text.gsub(/\n/, '<br/>').html_safe %></p> 
+	</div>
 </div>
