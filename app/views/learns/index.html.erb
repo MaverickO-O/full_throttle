@@ -18,9 +18,13 @@
     <% @learns.each do |learn| %>
       <tr>
         <td><%= learn.learntitle %></td>
-        <td><%= link_to 'Show', learn %></td>
-        <td><%= link_to 'Edit', edit_learn_path(learn) %></td>
-        <td><%= link_to 'Destroy', learn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', learn.learntitle %></td>
+        <% if user_signed_in? %>
+          <% if current_user.role=="full_admin" %>
+            <td><%= link_to 'Edit', edit_learn_path(learn) %></td>
+            <td><%= link_to 'Destroy', learn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
