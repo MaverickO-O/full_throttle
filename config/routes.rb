@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :logopics
   resources :learns
   get 'users/index'
 
