@@ -95,6 +95,12 @@ ActiveRecord::Schema.define(version: 2018_07_22_114545) do
     t.string "learntitle"
   end
 
+  create_table "logopics", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "logos", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false

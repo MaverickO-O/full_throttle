@@ -13,7 +13,11 @@
      <div id="menu_right">
       <div id="inside_menu">  
        <div class="name_bar_logo">
-         <%= image_tag("/assets/logo/#{ @bike.brand.downcase }.png", style:'height: 100px;') %>
+        <% (1..Logo.count).each do |k| %>
+          <% if Logo.find(k).name == @bike.brand.downcase %>
+            <%= image_tag(rails_blob_url(Logo.find(k).image), style:'height: 100px;') %>
+          <% end %>
+        <% end %> 
        </div>
        <div id="name_bar_title" class="name_bar_logo">
          <p><h2><%= @bike.bike_name %></h2></p>
