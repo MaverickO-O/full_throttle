@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_21_051854) do
+ActiveRecord::Schema.define(version: 2018_07_21_234226) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -59,6 +59,9 @@ ActiveRecord::Schema.define(version: 2018_07_21_051854) do
     t.text "comfort"
     t.integer "value_mark"
     t.text "value"
+    t.text "Youtubereview1"
+    t.text "Youtubereview2"
+    t.text "Youtubereview3"
   end
 
   create_table "brand_bike_dbs", force: :cascade do |t|

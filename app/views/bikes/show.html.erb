@@ -50,84 +50,35 @@
 
   <!-- bike picture -->
 <div id="bike_background">
-<%= image_tag @bike.picturetop, :style=>"height:100%; width: 100%; object-fit: contain" if @bike.picturetop.attachment.present? %>
+<%= image_tag @bike.picture2, :style=>"height:100%; width: 100%; object-fit: contain" if @bike.picture2.attachment.present? %>
 <!--<img src="/assets/bike/<%= @bike.brand.parameterize.underscore %>/<%= @bike.bike_name.parameterize.underscore %>/<%= @bike.year %>/big2.jpg" style='height:100%; width: 100%; object-fit: contain' /> -->
 </div>
 
-  <!--design and STYLE-->
-  <div id="style" class="flexi">
-    <div class="title_left">   
-        <div class="title_left_up">      
-          <h2>Design & built quality</h2>
+  <!--Youtube review-->
+  <% if !(@bike.Youtubereview1.blank?) %>
+    <% if @bike.Youtubereview2.blank? %>
+      <div id="style" class="flexi">    
+        <div class="title_left">
+          <div class="title_left_up">  
+              <h2>Review of the <%= @bike.brand %> <%= @bike.bike_name %></h2>
+          </div>
         </div>
-        <div class="title_left_down" style="background: no-repeat url(/assets/logo/<%= @bike.style_mark %>pistons.png) 50% / 50%;background-position: center top;">    
-        </div>     
-    </div>
-    <div class="text_right">
-      <h3><%= @bike.style.split("\n").first%></h3>
-      <p><%= @bike.style.gsub(@bike.style.split("\n").first + "\n",'').gsub(/\n/, '<br/>').html_safe %></p> 
-    </div>
-  </div>
+        <div class="text_right">
+          <h3><%= @bike.style.split("\n").first%></h3>
+          <%= raw @bike.Youtubereview1 %>
+        </div>
+      </div>
 
-  <!--Engine & transmission-->
-  <div id="style" class="flexi">
-    <div class="title_left"> 
-        <div class="title_left_up">      
-          <h2>Engine & Transmission</h2>
-        </div>
-        <div class="title_left_down" style="background: no-repeat url(/assets/logo/<%= @bike.engine_mark %>pistons.png) 50% / 50%;background-position: center top;">    
-        </div>  
-    </div>
-    <div class="text_right">
-      <h3><%= @bike.engine.split("\n").first%></h3>
-      <p><%= @bike.engine.gsub(@bike.engine.split("\n").first + "\n",'').gsub(/\n/, '<br/>').html_safe %></p>
-    </div>
-  </div>
+    <% else %>
 
-<!--Handling & Braking -->
-  <div id="style" class="flexi">
-    <div class="title_left"> 
-        <div class="title_left_up">      
-          <h2>Handling & braking</h2>
-        </div>
-        <div class="title_left_down" style="background: no-repeat url(/assets/logo/<%= @bike.handling_mark %>pistons.png) 50% / 50%;background-position: center top;">    
-        </div>  
-    </div>
-    <div class="text_right">
-      <h3><%= @bike.handling.split("\n").first%></h3>
-      <p><%= @bike.handling.gsub(@bike.handling.split("\n").first + "\n",'').gsub(/\n/, '<br/>').html_safe %></p>
-    </div>
-  </div>
+      <div class="text_right">
+        <h3>Review of the <%= @bike.brand %> <%= @bike.bike_name %></h3>
+        <%= raw @bike.Youtubereview1 %>
+        <%= raw @bike.Youtubereview2 %>
+      </div>
+    <% end %>
+  <% end %>
 
-<!--Comfort -->
-  <div id="style" class="flexi">
-    <div class="title_left"> 
-        <div class="title_left_up">      
-          <h2>Comfort</h2>
-        </div>
-        <div class="title_left_down" style="background: no-repeat url(/assets/logo/<%= @bike.comfort_mark %>pistons.png) 50% / 50%;background-position: center top;">    
-        </div>  
-    </div>
-    <div class="text_right">
-      <h3><%= @bike.comfort.split("\n").first%></h3>
-      <p><%= @bike.comfort.gsub(@bike.comfort.split("\n").first + "\n",'').gsub(/\n/, '<br/>').html_safe %></p>
-    </div>
-  </div>
-
-  <!--Value -->
-  <div id="style" class="flexi">
-    <div class="title_left"> 
-        <div class="title_left_up">      
-          <h2>Value</h2>
-        </div>
-        <div class="title_left_down" style="background: no-repeat url(/assets/logo/<%= @bike.value_mark %>pistons.png) 50% / 50%;background-position: center top;">    
-        </div>  
-    </div>
-    <div class="text_right">
-      <h3><%= @bike.value.split("\n").first%></h3>
-      <p><%= @bike.value.gsub(@bike.value.split("\n").first + "\n",'').gsub(/\n/, '<br/>').html_safe %></p>
-    </div>
-  </div>
 
   <!--CONCLUSION -->
   <div id="style" class="flexi">
