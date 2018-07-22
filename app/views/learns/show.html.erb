@@ -10,6 +10,6 @@
 		<% end %> 
 
 		<h1><%= @learn.learntitle %></h1>
-		<p><%= @learn.text.gsub(/\n/, '<br/>').html_safe %></p> 
+		<%= raw @learn.text.gsub(/\n/, '<br/>').html_safe %>
 	</div>
 </div>
