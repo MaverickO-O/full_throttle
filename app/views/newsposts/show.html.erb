@@ -12,7 +12,7 @@
 		<% end %>
 
 		<div id="news_left_main" class="add_padding">
-			<p><%= @newspost.text.gsub(/\n/, '<br/>').html_safe %></p>
+			<%=raw @newspost.text.gsub(/\n/, '<br/>').html_safe %>
 		</div>
 
 		<div id="news_left_right">

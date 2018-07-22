@@ -32,6 +32,15 @@
 
       <% if user_signed_in? %>
         <% if current_user.role=="full_admin" %>
+          <td><%= image_tag(bike.picturetop, width: '120') if bike.picturebike.attachment.present? %></td>
+          <td><%= image_tag(bike.picture2, width: '120') if bike.picturebike.attachment.present? %></td>
+          <% if !bike.Youtubereview1.blank? %>
+            <td>youtubereview1
+          <% end %>
+          <% if !bike.Youtubereview2.blank? %>
+            <td>youtubereview2
+          <% end %>
+
 
           <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
           <td><%= link_to 'Destroy', bike_path(bike),
