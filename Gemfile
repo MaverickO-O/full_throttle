@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'rails', '~> 5.2.0'
 gem 'bootsnap'
 gem "aws-sdk-s3", require: false
+gem 'sitemap_generator'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
