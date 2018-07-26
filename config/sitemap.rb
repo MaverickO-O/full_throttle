@@ -24,15 +24,15 @@ SitemapGenerator::Sitemap.create do
   # Add all articles:
   #
      Post.find_each do |post|
-       add post_path(post), :lastmod => post.updated_at, :priority => 0.5
+       add posts_path(post), :lastmod => post.updated_at, :priority => 0.5
      end
 
      Bike.find_each do |bike|
-       add bike_path(bike), :lastmod => bike.updated_at, :priority => 0.5
+       add bikes_path(bike), :lastmod => bike.updated_at, :priority => 0.5
      end
 
      Learn.find_each do |learn|
-       add learn_path(learn), :lastmod => learn.updated_at, :priority => 0.5
+       add learns_path(learn), :lastmod => learn.updated_at, :priority => 0.5
      end
 end
 
