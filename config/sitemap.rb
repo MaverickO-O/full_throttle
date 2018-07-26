@@ -35,7 +35,7 @@ SitemapGenerator::Sitemap.create do
 
             add bike_path(i), :lastmod => Bike.find(i).updated_at, :priority => 0.5
 
-    <% end %>
+     end
 
      Learn.find_each do |learn|
        add learn_path(learn), :lastmod => learn.updated_at, :priority => 0.5
