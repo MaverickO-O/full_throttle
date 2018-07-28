@@ -12,7 +12,7 @@
      </div>
      <div id="menu_right">
       <div id="inside_menu" class="add_padding20">  
-       <div class="name_bar_logo">
+       <div class="name_bar_logo mobileHide">
         <% (1..Logo.count).each do |k| %>
           <% if Logo.find(k).name.downcase == @bike.brand.downcase %>
             <%= image_tag rails_blob_url(Logo.find(k).image), class: "logopicwidth" %>

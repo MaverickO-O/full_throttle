@@ -17,7 +17,7 @@
 
 @media screen and (min-width: 320px) {
   p, th, td, li {
-    font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1000-320)));
+    font-size: calc(16px + (23 - 16) * ((100vw - 320px) / (1000-320)));
     font-family: 'Source Sans Pro', sans-serif;
     text-align: justify;
   }
@@ -25,7 +25,7 @@
 
 @media screen and (min-width: 1000px) {
   p, th, td, li {
-    font-size: 22px;
+    font-size: 23px;
     font-family: 'Source Sans Pro', sans-serif;
     text-align: justify;
   }
@@ -92,7 +92,7 @@ a {
 @media screen and (min-width: 320px) {
     h6 {
         font-family: 'Source Sans Pro', sans-serif;
-        font-size: calc(10px + (16 - 10) * ((100vw - 320px) / (1000-320)));
+        font-size: calc(8px + (16 - 8) * ((100vw - 320px) / (1000-320)));
         padding-bottom: calc(2px + (10 - 2) * ((100vw - 320px) / (1000-320)));
     }
 }
@@ -103,7 +103,6 @@ a {
         font-size: 16px;
     }
 }
-
 
 
 

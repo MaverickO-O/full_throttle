@@ -9,11 +9,11 @@
 }
 
 #nothing_left {
-    flex:10;
+    flex:100;
 }
 
 #menu_right {
-    flex:7; /*use 2/5 of the screen*/
+    flex:85; /*use 2/5 of the screen*/
     display: flex; /*to align verticall the menu*/
     align-items: bottom;
 }
@@ -26,9 +26,6 @@
     background: rgba(255, 255, 255, .8); 
 } 
 
-#nothing_right {
-    flex:1;
-}
 
 .name_bar_logo{
 display: flex;
@@ -44,8 +41,7 @@ display: flex;
 
 @media screen and (min-width: 320px) {
   .bikepicwidth{
-    width: calc(100vw * 350 / 1000);
-
+    width: calc(90px + (350 - 90) * ((100vw - 320px) / (1000-320)));
   }
 }
 
@@ -57,7 +53,7 @@ display: flex;
 
 @media screen and (min-width: 320px) {
   .logopicwidth{
-    height: calc(100vw * 100 / 1000);
+    height: calc(32px + (100 - 32) * ((100vw - 320px) / (1000-320)));
   }
 }
 
