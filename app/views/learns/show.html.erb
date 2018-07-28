@@ -1,6 +1,9 @@
 <div class="add_padding_top_bottom">
-	<div id="learnbackground">
+	
 
+		
+	<div id="learnbackground">
+		<h1><%= @learn.learntitle %></h1>
 		<% if user_signed_in? %>
 		  <% if current_user.role=="full_admin" %>
 		    <p id="notice"><%= notice %></p>
@@ -8,8 +11,10 @@
 		    <%= link_to 'Back', learns_path %>
 		  <% end %>
 		<% end %> 
-
-		<h1><%= @learn.learntitle %></h1>
-		<%= raw @learn.text.gsub(/\n/, '<br/>').html_safe %>
+		<div id="learntext">
+			<p>
+			<%= raw @learn.text.gsub(/\n/, '<br/>').html_safe %>
+			</p>
+		</div>
 	</div>
 </div>
