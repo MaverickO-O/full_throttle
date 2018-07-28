@@ -1,6 +1,6 @@
 <div id="forum_main">
 
-	<div id="forum_left_main" class="add_padding">
+	<div class="mobileHide" id="forum_left_main" class="add_padding">
 		<% (1..Forumcateg.count).each do |i| %>
 			<% (1..Forumcateg.count).each do |k| %>
 				<% if Forumcateg.find(k).order == i %>

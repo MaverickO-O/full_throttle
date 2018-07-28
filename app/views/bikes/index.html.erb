@@ -11,10 +11,10 @@
       <th>Name</th>
       <th>Picture</th>
       <th>Type</th>
-      <th>Cyclinder</th>
-      <th>Horse Power</th>
-      <th>Weight</th>
-      <th>Price</th>
+      <th class="mobileHide">Cyclinder</th>
+      <th class="mobileHide" >Horse Power</th>
+      <th class="mobileHide">Weight</th>
+      <th class="mobileHide">Price</th>
     </tr>
   </thead>
  
@@ -26,10 +26,10 @@
       <td><%= bike.bike_name %></td>
       <td><%= image_tag(bike.picturebike, width: '120') if bike.picturebike.attachment.present? %></td>
       <td><%= bike.bike_type %></td>
-      <td><%= bike.cylinder_cc %> CC</td>
-      <td><%= bike.power_hp %></td>
-      <td><%= bike.weight_lb %></td>
-      <td><%= bike.price_usd %></td>
+      <td class="mobileHide"><%= bike.cylinder_cc %> CC</td>
+      <td class="mobileHide"><%= bike.power_hp %></td>
+      <td class="mobileHide"><%= bike.weight_lb %></td>
+      <td class="mobileHide"><%= bike.price_usd %></td>
 
       <% if user_signed_in? %>
         <% if current_user.role=="full_admin" %>

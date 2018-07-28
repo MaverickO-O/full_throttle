@@ -18,3 +18,9 @@ table {
     width: 100%;
     border-collapse: collapse;
 }
+
+@media screen and (max-device-width : 500px) {
+     .mobileHide {
+     	display: none;
+     }
+}
