@@ -11,11 +11,11 @@
      <div id="nothing_left">
      </div>
      <div id="menu_right">
-      <div id="inside_menu">  
+      <div id="inside_menu" class="add_padding20">  
        <div class="name_bar_logo">
         <% (1..Logo.count).each do |k| %>
           <% if Logo.find(k).name.downcase == @bike.brand.downcase %>
-            <%= image_tag(rails_blob_url(Logo.find(k).image), style:'height: 100px;') %>
+            <%= image_tag rails_blob_url(Logo.find(k).image), class: "logopicwidth" %>
           <% end %>
         <% end %> 
        </div>
@@ -30,7 +30,7 @@
          <li>Price > $<%= @bike.price_usd %></li>
        </div> 
        <div class="name_bar_logo">
-         <%= image_tag(@bike.picturebike, style:'width: 350px;') %>
+         <%= image_tag @bike.picturebike, class: "bikepicwidth" %>
        </div>
       </div>
      </div>
