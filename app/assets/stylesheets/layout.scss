@@ -16,6 +16,12 @@ body
 
 }
 
+@media screen and (max-device-width : 500px) {
+     .mobileHide {
+        display: none;
+     }
+}
+
 
 /*------------footer ------------------*/
 footer { 
