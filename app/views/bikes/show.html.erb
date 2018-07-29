@@ -40,8 +40,8 @@
 
 
 <!--INTRODUCTION -->
-  <div id="style" class="flexi">
-    <div class="title_left">
+  <div id="style" class="flexi add_padding20">
+    <div class="title_left mobileHide">
       <div class="title_left_up">       
           <h2>Introduction</h2>
       </div>    
@@ -61,12 +61,16 @@
   <!--Youtube review-->
   <% if !(@bike.Youtubereview1.blank?) %>
     <% if @bike.Youtubereview2.blank? %>
-      <div id="style" class="flexi">    
-        <div class="title_left">
+    <h3 class="mobileShow">Review of the <%= @bike.brand %> <%= @bike.bike_name %></h3>
+      <div id="style" class="flexi add_padding20">   
+              
+
+        <div class="title_left mobileHide">
           <div class="title_left_up">  
               <h2>Review of the <%= @bike.brand %> <%= @bike.bike_name %></h2>
           </div>
         </div>
+
         <div class="text_right">
           <div class="videoWrapper">
             <%= raw @bike.Youtubereview1 %>

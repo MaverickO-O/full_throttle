@@ -20,6 +20,12 @@ body{
      }
 }
 
+@media screen and (min-width : 500px) {
+     .mobileShow {
+        display: none;
+     }
+}
+
 .maxwidth800{
     margin: auto;
     max-width: 800px;
@@ -43,6 +49,5 @@ body{
 /*------------footer ------------------*/
 footer { 
     background-color: #f2f2f2; 
-    padding: 15px 0px 15px 0px;
 }
 
