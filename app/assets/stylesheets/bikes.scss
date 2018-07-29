@@ -9,11 +9,11 @@
 }
 
 #nothing_left {
-    flex:100;
+    flex:10;
 }
 
 #menu_right {
-    flex:85; /*use 2/5 of the screen*/
+    flex:7; /*use 2/5 of the screen*/
     display: flex; /*to align verticall the menu*/
     align-items: bottom;
 }

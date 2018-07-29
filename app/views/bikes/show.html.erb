@@ -23,11 +23,16 @@
          <p><h1><%= @bike.bike_name %></h1></p>
        </div>
        <div>
-         <li>Type > <%= @bike.bike_type %></li>
-         <li>Displacement > <%= @bike.cylinder_cc %> CC</li>
-         <li>Power > <%= @bike.power_hp %> HP</li>
-         <li>Weight > <%= @bike.weight_kg %>kg</li>
-         <li>Price > $<%= @bike.price_usd %></li>
+         <li class="mobileHide">Type > <%= @bike.bike_type %></li>
+         <li class="mobileHide">Displacement > <%= @bike.cylinder_cc %> CC</li>
+         <li class="mobileHide">Power > <%= @bike.power_hp %> HP</li>
+         <li class="mobileHide">Weight > <%= @bike.weight_kg %>kg</li>
+         <li class="mobileHide">Price > $<%= @bike.price_usd %></li>
+         <li class="mobileShow"><%= @bike.bike_type %></li>
+         <li class="mobileShow"><%= @bike.cylinder_cc %> CC</li>
+         <li class="mobileShow"><%= @bike.power_hp %> HP</li>
+         <li class="mobileShow"><%= @bike.weight_kg %>kg</li>
+         <li class="mobileShow">$<%= @bike.price_usd %></li>
        </div> 
        <div class="name_bar_logo">
          <%= image_tag @bike.picturebike, class: "bikepicwidth" %>
