@@ -7,7 +7,7 @@
     <% end %>
   <% end %> 
 
-  <table>
+ <%# <table>
     <thead>
       <tr>
         <th>Title</th>
@@ -17,19 +17,30 @@
 
     <tbody>
       <% @learns.each do |learn| %>
-        <tr>
-          <td><%= learn.learntitle %></td>
-          <td><%= link_to 'Show', learn %></td>
+ <%#       <tr>
+          <td><%= learn.learntitle %> <%#</td>
+          <td><%= link_to 'Show', learn %> <%#</td>
           <% if user_signed_in? %>
-            <% if current_user.role=="full_admin" %>
-              <td><%= link_to 'Edit', edit_learn_path(learn) %></td>
-              <td><%= link_to 'Destroy', learn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <%#           <% if current_user.role=="full_admin" %>
+ <%#              <td><%= link_to 'Edit', edit_learn_path(learn) %> <%#</td>
+              <td><%= link_to 'Destroy', learn, method: :delete, data: { confirm: 'Are you sure?' } %> <%#</td>
             <% end %>
-          <% end %>
-        </tr>
+          <%# <% end %>
+        <%# </tr>
       <% end %>
-    </tbody>
-  </table>
+    <%# </tbody>
+  </table> %>
+
+<ul class="containerwrap">
+  <% @learns.each do |learn| %>
+    <li class="childwrap">
+      <h3><%= learn.learntitle %></h3>
+
+      <p class="box3lines"><%= raw learn.text.gsub(/\n/, '<br/>').html_safe %></p>
+      
+      </li>
+  <% end %>
+</ul>
 
   <br>
 </div>

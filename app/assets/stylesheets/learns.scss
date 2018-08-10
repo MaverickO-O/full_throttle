@@ -6,3 +6,31 @@
 	margin: auto;
 	max-width: 800px;
 }
+
+.containerwrap{
+    padding: 0;
+  list-style: none;
+  margin: auto;
+  max-width: 1000px;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.childwrap {
+  border: 1px solid #ddd;
+  padding: 5px;
+  width: 300px;
+  margin-top: 10px;
+  
+  text-align: center;
+
+}
+
+.box3lines {
+	 display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
