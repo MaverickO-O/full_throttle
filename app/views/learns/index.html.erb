@@ -33,7 +33,7 @@
 
 <ul class="containerwrap">
   <% @learns.each do |learn| %>
-    <li class="childwrap">
+    <li class="childwrap" onmouseover="this.style.cursor='pointer'" onClick="window.location.href='<%= learn_path(learn) %>';">
       <h3><%= learn.learntitle %></h3>
 
       <p class="box3lines"><%= raw learn.text.gsub(/\n/, '<br/>').html_safe %></p>

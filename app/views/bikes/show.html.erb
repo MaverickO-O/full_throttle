@@ -94,17 +94,5 @@
   <% end %>
 
 
-  <!--CONCLUSION -->
-  <div id="style" class="flexi">
-    <div class="title_left">
-    <div class="title_left_up">       
-        <h2>Conclusion</h2>
-    </div>    
-    </div>
-    <div class="text_right">
-      <h3><%= @bike.conclusion.split("\n").first%></h3>
-      <p><%= @bike.conclusion.gsub(@bike.conclusion.split("\n").first + "\n",'').gsub(/\n/, '<br/>').html_safe %></p>  
-    </div>
-  </div>
 
 
