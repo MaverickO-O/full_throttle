@@ -4,6 +4,12 @@
 
  <%= select_tag(:brande, options_for_select([['Brand', "brand"],['BMW', "bmw"], ['Ducati', "ducati"],['Honda', "honda"], ['Suzuki', "suzuki"],['Kawasaki', "kawasaki"],['Yamaha', "Yamaha"]]), :onchange => 'filter_function()') %>
 
+ <select type="search" class="select-table-filter" data-table="order-table">
+    <option value="">Reset</option>  
+    <option value="org">org</option>  
+    <option value="Vanda">Vanda</option>  
+  <select>
+
 <table id="bike_table">
 <thead>
     <tr>
