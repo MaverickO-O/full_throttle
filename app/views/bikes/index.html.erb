@@ -2,13 +2,13 @@
 <h1>Select your gear!</h1> 
 <h2>Filter option</h2>
 
- <%= select_tag(:brande, options_for_select([['Brand', "brand"],['BMW', "bmw"], ['Ducati', "ducati"],['Honda', "honda"], ['Suzuki', "suzuki"],['Kawasaki', "kawasaki"],['Yamaha', "Yamaha"]]), :onchange => 'filter_function()') %>
+<p>Filter per brand</p>
+ <%= select_tag(:brand, options_for_select([['-', "-"],['BMW', "bmw"], ['Ducati', "ducati"],['Honda', "honda"], ['Suzuki', "suzuki"],['Kawasaki', "kawasaki"],['Yamaha', "Yamaha"]]), :onchange => 'filter_function()') %>
 
- <select type="search" class="select-table-filter" data-table="order-table">
-    <option value="">Reset</option>  
-    <option value="org">org</option>  
-    <option value="Vanda">Vanda</option>  
-  <select>
+ <p>Filter per type</p>
+ <%= select_tag(:type, options_for_select([['-', "-"],['Sportbike', "sportbike"], ['Cruiser', "cruiser"],['Honda', "honda"], ['Suzuki', "suzuki"],['Kawasaki', "kawasaki"],['Yamaha', "Yamaha"]]), :onchange => 'filter_function()') %>
+
+
 
 <table id="bike_table">
 <thead>
@@ -28,7 +28,6 @@
   <% @bikes.each do |bike| %>
     <tr onmouseover="this.style.cursor='pointer'" onClick="window.location.href='<%= bike_path(bike) %>';">
       <td><%= bike.brand %></td>
-
       <td><%= bike.bike_name %></td>
       <td><%= image_tag(bike.picturebike, width: '120') if bike.picturebike.attachment.present? %></td>
       <td class="mobileHide"><%= bike.bike_type %></td>
