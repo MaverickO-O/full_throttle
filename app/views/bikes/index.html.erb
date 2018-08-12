@@ -10,55 +10,85 @@
 
 
 
-<table id="bike_table">
-<thead>
-    <tr>
-      <th>Brand</th>
-      <th>Name</th>
-      <th>Picture</th>
-      <th class="mobileHide">Type</th>
-      <th class="mobileHide">Cyclinder</th>
-      <th class="mobileHide" >Horse Power</th>
-      <th class="mobileHide">Weight</th>
-      <th class="mobileHide">Price</th>
-    </tr>
-  </thead>
- 
- <tbody>
-  <% @bikes.each do |bike| %>
-    <tr onmouseover="this.style.cursor='pointer'" onClick="window.location.href='<%= bike_path(bike) %>';">
-      <td><%= bike.brand %></td>
-      <td><%= bike.bike_name %></td>
-      <td><%= image_tag(bike.picturebike, width: '120') if bike.picturebike.attachment.present? %></td>
-      <td class="mobileHide"><%= bike.bike_type %></td>
-      <td class="mobileHide"><%= bike.cylinder_cc %> CC</td>
-      <td class="mobileHide"><%= bike.power_hp %></td>
-      <td class="mobileHide"><%= bike.weight_lb %></td>
-      <td class="mobileHide"><%= bike.price_usd %></td>
-
-      <% if user_signed_in? %>
-        <% if current_user.role=="full_admin" %>
-          <td><%= image_tag(bike.picturetop, width: '120') if bike.picturetop.attachment.present? %></td>
-          <td><%= image_tag(bike.picture2, width: '120') if bike.picture2.attachment.present? %></td>
-          <% if !bike.Youtubereview1.blank? %>
-            <td>youtubereview1
-          <% end %>
-          <% if !bike.Youtubereview2.blank? %>
-            <td>youtubereview2
-          <% end %>
 
 
-          <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
-          <td><%= link_to 'Destroy', bike_path(bike),
-                  method: :delete,
-                  data: { confirm: 'Are you sure?' } %></td>   
-        <% end %>
+<div class="flexi">
+  <div>
+    <ul class="containerwrap" id="myUL">
+      <% @bikes.each do |bike| %>
+        <li class="childwrap" onmouseover="this.style.cursor='pointer'" onClick="window.location.href='<%= bike_path(bike) %>';">
+          <%= image_tag(bike.picturebike, width: '150') if bike.picturebike.attachment.present? %>
+          <h3><%= bike.brand %></h3>
+          <h3><%= bike.bike_name %></h3>
+          <p><%= bike.bike_type %></p>
+
+          
+          </li>
       <% end %>
+    </ul>
+  </div>
 
-    </tr>
+  <div class="ads160by600">
+
+
+  </div>
+</div>
+
+<% if user_signed_in? %>
+  <% if current_user.role=="full_admin" %>
+
+    <table id="bike_table">
+    <thead>
+        <tr>
+          <th>Brand</th>
+          <th>Name</th>
+          <th>Picture</th>
+          <th class="mobileHide">Type</th>
+          <th class="mobileHide">Cyclinder</th>
+          <th class="mobileHide" >Horse Power</th>
+          <th class="mobileHide">Weight</th>
+          <th class="mobileHide">Price</th>
+        </tr>
+      </thead>
+     
+     <tbody>
+      <% @bikes.each do |bike| %>
+        <tr onmouseover="this.style.cursor='pointer'" onClick="window.location.href='<%= bike_path(bike) %>';">
+          <td><%= bike.brand %></td>
+          <td><%= bike.bike_name %></td>
+          <td><%= image_tag(bike.picturebike, width: '120') if bike.picturebike.attachment.present? %></td>
+          <td class="mobileHide"><%= bike.bike_type %></td>
+          <td class="mobileHide"><%= bike.cylinder_cc %> CC</td>
+          <td class="mobileHide"><%= bike.power_hp %></td>
+          <td class="mobileHide"><%= bike.weight_lb %></td>
+          <td class="mobileHide"><%= bike.price_usd %></td>
+
+          <% if user_signed_in? %>
+            <% if current_user.role=="full_admin" %>
+              <td><%= image_tag(bike.picturetop, width: '120') if bike.picturetop.attachment.present? %></td>
+              <td><%= image_tag(bike.picture2, width: '120') if bike.picture2.attachment.present? %></td>
+              <% if !bike.Youtubereview1.blank? %>
+                <td>youtubereview1
+              <% end %>
+              <% if !bike.Youtubereview2.blank? %>
+                <td>youtubereview2
+              <% end %>
+
+
+              <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
+              <td><%= link_to 'Destroy', bike_path(bike),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' } %></td>   
+            <% end %>
+          <% end %>
+
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
   <% end %>
-  </tbody>
-</table>
+<% end %>
 </div>
 
 
